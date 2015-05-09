@@ -1,5 +1,7 @@
 -http://www.primefaces.org/showcase/ui/csv/event.xhtml
 
+Coger 3-4 componentes de cada sección y documentarlos:
+
 Pablo - Ajax core, Input, Button, Data - Formulario de alta
 Javier - Panel, Overlay, Menu, Charts - Listado usuarios
 Iñigo - Messages, Multimedia, File, DragDrop - Index
