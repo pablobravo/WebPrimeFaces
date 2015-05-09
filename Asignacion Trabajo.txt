@@ -1,0 +1,6 @@
+-http://www.primefaces.org/showcase/ui/csv/event.xhtml
+
+Pablo - Ajax core, Input, Button, Data - Formulario de alta
+Javier - Panel, Overlay, Menu, Charts - Listado usuarios
+Iñigo - Messages, Multimedia, File, DragDrop - Index
+Álvaro - Client Side Validaton, Dialog Framework, Misc - Diapositivas
