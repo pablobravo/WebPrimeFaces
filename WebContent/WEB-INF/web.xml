@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>Notaneitorv3_0</display-name>
+  <display-name>Notaneitorv3_3</display-name>
   <welcome-file-list>
     <welcome-file>index.xhtml</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -18,4 +18,24 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>AllPages</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>NotaneitorAdmin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <realm-name>other</realm-name>
+    <form-login-config>
+      <form-login-page>/login_form.html</form-login-page>
+      <form-error-page>/login_form.html</form-error-page>
+    </form-login-config>
+  </login-config>
+  <security-role>
+    <role-name>NotaneitorAdmin</role-name>
+  </security-role>
 </web-app>

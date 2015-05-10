@@ -61,20 +61,24 @@ public class BeanAlumnos implements Serializable{
 	    	 alumno.iniciaAlumno(event);	
 	    	  }
 	       
-		public String listado() {
-			AlumnosService service;
-			try {
-				service = Factories.services.createAlumnosService();
-				alumnos = (Alumno[]) service.getAlumnos().toArray(new Alumno[0]);
-	
-				return "exito"; // Nos vamos a la vista listado.xhtml
-	
-			} catch (Exception e) {
-				e.printStackTrace();
-				return "error"; // Nos vamos la vista de error
-			}
-		}
-		
+	       public String listado() {
+		       AlumnosService service;
+				  try {
+				  // Acceso a la implementacion de la capa de negocio 
+					// a trav��s de la factor��a
+					service = Factories.services.createAlumnosService();
+					// De esta forma le damos informaci��n a toArray para poder hacer el casting a Alumno[]
+					alumnos = (Alumno [])service.getAlumnos().toArray(new Alumno[0]);
+					
+					return "exito"; //Nos vamos a la vista listado.xhtml
+					
+				  } catch (Exception e) {
+					e.printStackTrace();  
+					return "error";   //Nos vamos la vista de error
+				  }
+				  
+		 	  }
+			
 		public String baja(Alumno alumno) {
 		       AlumnosService service;
 				  try {
