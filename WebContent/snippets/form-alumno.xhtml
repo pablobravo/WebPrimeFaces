@@ -1,58 +1,57 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core">
-  <h:panelGrid columns="2" styleClass="formTable">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panelGrid columns="2" styleClass="formTable">
   #{msgs.nombre} 
-  <h:panelGroup>
-  <h:inputText value="#{alumno.nombre}"
-               required="true"
-               requiredMessage="#{msgs.formAlta_nombre_requiredMessage}"
-               validatorMessage="#{msgs.formAlta_nombre_validatorMessage}"
-               id="nombre">
-    <f:validateLength maximum="20"/>           
-  </h:inputText>
-  <h:message for="nombre"/>
-  </h:panelGroup>
+  <p:panel>
+			<p:inputText value="#{alumno.nombre}" required="true"
+				requiredMessage="#{msgs.formAlta_nombre_requiredMessage}"
+				validatorMessage="#{msgs.formAlta_nombre_validatorMessage}"
+				id="nombre">
+				<f:validateLength maximum="20" />
+			</p:inputText>
+			<p:messages for="nombre" showDetail="true" autoUpdate="true" closable="true" />
+		</p:panel>
   
   #{msgs.apellidos} 
-  <h:panelGroup>
-  <h:inputText value="#{alumno.apellidos}"
-               required="true"
-               requiredMessage="#{msgs.formAlta_apellidos_requiredMessage}"
-               validatorMessage="#{msgs.formAlta_apellidos_validatorMessage}"
-               id="apellidos">
-    <f:validateLength  maximum="40"/>           
-  </h:inputText>
-  <h:message for="apellidos"/>
-  </h:panelGroup>
+  <p:panel>
+			<p:inputText value="#{alumno.apellidos}" required="true"
+				requiredMessage="#{msgs.formAlta_apellidos_requiredMessage}"
+				validatorMessage="#{msgs.formAlta_apellidos_validatorMessage}"
+				id="apellidos">
+				<f:validateLength maximum="40" />
+			</p:inputText>
+			<p:messages for="apellidos" showDetail="true" autoUpdate="true" closable="true" />
+		</p:panel>
   
   #{msgs.userid}
-  <h:panelGroup>
-  <h:inputText value="#{alumno.iduser}"
-               required="true"
-               requiredMessage="#{msgs.formAlta_iduser_requiredMessage}"
-               validatorMessage="#{msgs.formAlta_iduser_validatorMessage}"
-               id="iduser">
-    <f:validateLength minimum="5" maximum="8"/>           
-  </h:inputText>
-  <h:message for="iduser"/>
-  </h:panelGroup>  
+  <p:panel>
+			<p:inputText value="#{alumno.iduser}" required="true"
+				requiredMessage="#{msgs.formAlta_iduser_requiredMessage}"
+				validatorMessage="#{msgs.formAlta_iduser_validatorMessage}"
+				id="iduser">
+				<f:validateLength minimum="5" maximum="8" />
+			</p:inputText>
+			<p:messages for="iduser" showDetail="true" autoUpdate="true" closable="true" />
+		</p:panel>  
   
   #{msgs.correo}
-  <h:panelGroup> 
-  <h:inputText value="#{alumno.email}"
-               required="true"
-               requiredMessage="#{msgs.formAlta_correo_requiredMessage}"
-               validatorMessage="#{msgs.formAlta_correo_validatorMessage}"
-               id="correo">
-    <f:validateRegex pattern=".+@.+\.[a-z]+"/>           
-  </h:inputText>
-  <h:message for="correo"/>
-  </h:panelGroup>
-  <h:commandButton value="#{msgs.botonSalvar}" 
-                   action="#{controller.salva}">  
-                
-  </h:commandButton>
-  </h:panelGrid>
+  <p:panel>
+			<p:inputText value="#{alumno.email}" required="true"
+				requiredMessage="#{msgs.formAlta_correo_requiredMessage}"
+				validatorMessage="#{msgs.formAlta_correo_validatorMessage}"
+				id="correo">
+				<f:validateRegex pattern=".+@.+\.[a-z]+" />
+			</p:inputText>
+			<p:messages for="correo" showDetail="true" autoUpdate="true" closable="true" />
+		</p:panel>
+		<p:commandButton value="#{msgs.botonSalvar}"
+			action="#{controller.salva}"
+			actionListener="#{buttonView.buttonAction}" id="iconOnly"
+			icon="ui-icon-disk" title="Icon Only">
+
+		</p:commandButton>
+	</p:panelGrid>
 </ui:composition>
