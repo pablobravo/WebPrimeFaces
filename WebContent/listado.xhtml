@@ -10,19 +10,19 @@
 
 	<ui:define name="cuerpo">
 		<h:form id="form-principal">
-			<p:dataTable var="valumno" value="#{controller.alumnos}">
-				<p:column headerText="#{msgs.tablaNombre}">
+			<p:dataTable var="valumno" value="#{controller.alumnos}" draggableColumns="true">
+				<p:column headerText="#{msgs.tablaNombre}" filterBy="#{valumno.nombre}" filterMatchMode="contains">
 					<h:outputText value="#{valumno.nombre}" />
 				</p:column>
-				<p:column headerText="#{msgs.tablaApellidos}">
+				<p:column headerText="#{msgs.tablaApellidos}" filterBy="#{valumno.apellidos}" filterMatchMode="contains">
 					<h:outputText value="#{valumno.apellidos}" />
 				</p:column>
 
-				<p:column headerText="#{msgs.tablaIdUser}">
+				<p:column headerText="#{msgs.tablaIdUser}" filterBy="#{valumno.iduser}" filterMatchMode="contains">
 					<h:outputText value="#{valumno.iduser}" />
 				</p:column>
 
-				<p:column headerText="#{msgs.tablaCorreo}">
+				<p:column headerText="#{msgs.tablaCorreo}" filterBy="#{valumno.email}" filterMatchMode="contains">
 					<h:outputText value="#{valumno.email}" />
 				</p:column>
 				<p:column headerText="#{msgs.tablaBaja}">
