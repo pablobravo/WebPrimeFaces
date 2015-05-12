@@ -6,45 +6,46 @@
 	<p:panelGrid columns="2" styleClass="formTable">
   #{msgs.nombre} 
   <p:panel>
-			<p:inputText value="#{alumno.nombre}" required="true"
+			
+			<p:keyboard value="#{alumno.nombre}" required="true"
 				requiredMessage="#{msgs.formAlta_nombre_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_nombre_validatorMessage}"
-				id="nombre">
+				id="nombre" >
 				<f:validateLength maximum="20" />
-			</p:inputText>
+			</p:keyboard>
 			<p:messages for="nombre" showDetail="true" autoUpdate="true" closable="true" />
 		</p:panel>
   
   #{msgs.apellidos} 
   <p:panel>
-			<p:inputText value="#{alumno.apellidos}" required="true"
+			<p:keyboard value="#{alumno.apellidos}" required="true"
 				requiredMessage="#{msgs.formAlta_apellidos_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_apellidos_validatorMessage}"
 				id="apellidos">
 				<f:validateLength maximum="40" />
-			</p:inputText>
+			</p:keyboard>
 			<p:messages for="apellidos" showDetail="true" autoUpdate="true" closable="true" />
 		</p:panel>
   
   #{msgs.userid}
   <p:panel>
-			<p:inputText value="#{alumno.iduser}" required="true"
+			<p:keyboard  value="#{alumno.iduser}" required="true"
 				requiredMessage="#{msgs.formAlta_iduser_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_iduser_validatorMessage}"
 				id="iduser">
 				<f:validateLength minimum="5" maximum="8" />
-			</p:inputText>
+			</p:keyboard>
 			<p:messages for="iduser" showDetail="true" autoUpdate="true" closable="true" />
 		</p:panel>  
   
   #{msgs.correo}
   <p:panel>
-			<p:inputText value="#{alumno.email}" required="true"
+			<p:keyboard  value="#{alumno.email}" required="true"
 				requiredMessage="#{msgs.formAlta_correo_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_correo_validatorMessage}"
 				id="correo">
 				<f:validateRegex pattern=".+@.+\.[a-z]+" />
-			</p:inputText>
+			</p:keyboard>
 			<p:messages for="correo" showDetail="true" autoUpdate="true" closable="true" />
 		</p:panel>
 		<p:commandButton value="#{msgs.botonSalvar}"
