@@ -2,19 +2,30 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:ui="http://java.sun.com/jsf/facelets"
-    template="/templates/template-general.xhtml">
+    template="/templates/template-general.xhtml"
+      xmlns:p="http://primefaces.org/ui">
 <ui:define name="titulo">
     #{msgs.tituloOpciones}
 </ui:define>
 
 <ui:define name="cuerpo">
-<h:form id="form-principal">
-  <h:commandLink value="#{msgs.enlaceListado}" action="#{controller.listado}"/> 
-  <br/>
-  <h:commandLink value="#{msgs.enlaceAlta}" action="alta" actionListener="#{alumno.iniciaAlumno}"/>
-</h:form>
+		<h:form id="form-principal">
+			<h3>Menu</h3>
+			<p:commandButton id="dynaButton" value="Show" type="button"
+				icon="ui-icon-extlink" />
+			<p:menu overlay="true" trigger="dynaButton" my="left top"
+				at="left bottom">
+				<p:submenu label="Nav">
+					<p:menuitem value="#{msgs.enlaceListado}" 
+						actionListener="#{controller.listado}" update="messages"
+						icon="ui-icon-disk" ajax="false"/>
+					<p:menuitem value="#{msgs.enlaceAlta}" action="alta"
+						actionListener="@{alumno.iniciaAlumno}" update="messages"
+						icon="ui-icon-disk" ajax="false" />
+				</p:submenu>
+			</p:menu>
+		</h:form>
 </ui:define>
-
 <ui:define name="pie">
      <ui:include src="/snippets/pie-idiomas.xhtml"/>
 </ui:define>
